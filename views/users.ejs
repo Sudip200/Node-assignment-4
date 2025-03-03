@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Users</title>
+  </head>
+  <body>
+    <h1>Users</h1>
+    <ul>
+      <% users.forEach(function(user) { %>
+        <li><%= user.name %>  - <%= user.techStack %></li>
+        <li><img src="<%= user.profilePic %>" alt="profile picture">
+        </li>
+      <% }); %>
+    </ul>
+  </body>
+</html>
