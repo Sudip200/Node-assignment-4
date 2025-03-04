@@ -1,0 +1,68 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5em;
+    color: #ff66b2;
+    margin-top: 40px;
+    font-family: 'Dancing Script', cursive;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.projects-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.project-item {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.project-item h2 {
+    margin: 0;
+    color: #007BFF;
+    text-align: center;
+}
+
+.project-item p {
+    margin: 5px 0 0;
+    color: #555;
+}
+
+p {
+    text-align: center;
+    color: #888;
+}
