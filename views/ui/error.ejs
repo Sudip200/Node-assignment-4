@@ -1,0 +1,68 @@
+<div class="errors">
+    <% if (errors.length> 0) { %>
+        <div class="alert">
+            <% errors.forEach(error=> { %>
+                <div class="error">
+                    <span class="close">X</span>
+                    <%= error.msg %>
+                </div>
+                <% }) %>
+        </div>
+        <% } %>
+            <style>
+                .alert {
+                    list-style: none;
+                    display: flex;
+                    flex-direction: column;
+                    position: absolute;
+                    gap: 10px;
+                    animation: fadeIn 0.5s;
+                }
+
+                .error {
+                    color: white;
+                    font-size: 1.2rem;
+                    background-color: rgb(253, 115, 115);
+                    padding: 10px;
+                    border-radius: 5px;
+                    width: 100%;
+                    text-align: center;
+                }
+
+                .close {
+                    padding: 5px;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    margin-left: 10px;
+                }
+
+                textarea {
+                    padding: 5px;
+                    font-size: 1rem;
+                    width: 100%;
+                    border-radius: 20px;
+                    border: none;
+                    background-color: rgb(247, 193, 243);
+                    outline: none;
+                    padding: 10px;
+                }
+
+                @keyframes fadeIn {
+                    from {
+                        top: -100px;
+                    }
+
+                    to {
+                        top: 0;
+                    }
+                }
+            </style>
+            <script>
+                const closeButtons = document.querySelectorAll('.close');
+                closeButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        button.parentElement.style.display = 'none';
+                    });
+                });
+            </script>
+</div>

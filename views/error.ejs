@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Form</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/404.css" />
+</head>
+
+<body>
+    <%- include('ui/nav.ejs') %>
+        <div class="page-404">
+            <div class="image-container">
+                <img src="../assets/error.svg" alt="404" width="700px" />
+            </div>
+            <div class="text-container">
+                <h1>Internal Server Error</h1>
+                <p>
+                    <%= error %>
+                </p>
+                <button class="btn"><a href="/">Home</a></button>
+            </div>
+        </div>
+</body>
+
+</html>
