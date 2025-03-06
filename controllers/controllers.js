@@ -11,7 +11,7 @@ exports.handleFormScreen=(req,res)=>{
         profilePic:'',
         techStack:''
     },
-    route   :'/create'
+    route :'/create'
 })
 }
 exports.handleCreate = ( req,res)=>{
@@ -37,7 +37,7 @@ exports.handleUsers = (req,res)=>{
     })  
 }
 exports.deleteUser = ( req,res)=>{
-User.destroy({where:{id:req.body.id}}).then(()=>{
+User.destroy({where:{id:req.params.id}}).then(()=>{
     res.redirect('/users')
 }).catch((err)=>{
     res.send(err)

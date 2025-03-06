@@ -1,32 +1,11 @@
-/* Global Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
-    line-height: 1.6;
-}
 
 h1 {
     text-align: center;
     font-size: 2.5em;
     color: #ff66b2;
     margin-top: 40px;
-    font-family: 'Dancing Script', cursive;
 }
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-}
-
 .container {
     width: 80%;
     margin: 0 auto;
@@ -36,10 +15,6 @@ body {
     border-radius: 8px;
 }
 
-h1 {
-    text-align: center;
-    color: #333;
-}
 
 .projects-list {
     list-style-type: none;

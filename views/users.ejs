@@ -1,38 +1,54 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Users</title>
-    <link rel="stylesheet" href="/users.css">
-  </head>
-  <body>
-    <%- include('ui/nav.ejs') %>
+
+<head>
+  <title>Users</title>
+  <link rel="stylesheet" href="/users.css">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <%- include('ui/nav.ejs') %>
 
     <div class="container">
-      
-      <% if (users.length === 0) { %>
+
+      <% if (users.length===0) { %>
         <p>No users found.</p>
-     <% } else { %>
-      <% users.forEach(function(user) { %>
-        <div class="card">
-                <img src="<%= user.profilePic %>" alt="profile picture">
-                    <div><%= user.name %></div>
-                    <div><%= user.techStack %></div>
-                    <form action="/delete/" method="POST"">
-                        <input type="hidden" name="id" value="<%= user.id %>">
-                        <button type="submit">Delete</button>
-                    </form>
-                    <div class="edit">
-                        <a href="/edit/<%= user.id %>">Edit</a>
-                 </div>
-                 <div  class="submitproject">
-                  <a href="/projects/<%= user.id %>">Submit Projects</a>
-           </div>
-           <div  class="viewprojects">
-            <a href="/viewprojects/<%= user.id %>">View Projects</a>
-     </div>
-        </div>
-          <% }); %>
-        <% } %>
+        <% } else { %>
+          <% users.forEach(function(user) { %>
+            <div class="card">
+              <img src="<%= user.profilePic %>" alt="profile picture">
+              <div>
+                <%= user.name %>
+              </div>
+              <div>
+                <%= user.techStack %>
+              </div>
+              <div class="button-container">
+                <div class="delete">
+                  <a href="/delete/<%= user.id %>"> <i class="fa fa-trash"></i></a>
+                </div>
+
+                <div class="edit">
+                  <a href="/edit/<%= user.id %>">
+                    <i class="fa fa-pencil"></i>
+                  </a>
+                </div>
+                <div class="submitproject">
+
+                  <a href="/projects/<%= user.id %>"><i class="fa fa-plus"></i></a>
+                </div>
+                <div class="viewprojects">
+                  <a href="/viewprojects/<%= user.id %>">
+                    <i class="fa fa-eye"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <% }); %>
+              <% } %>
     </div>
-  </body>
+</body>
+
 </html>

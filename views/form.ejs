@@ -1,21 +1,28 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Form</title>
-    <link rel="stylesheet" href="/form.css">
-    <link rel="stylesheet" href="/users.css">
-  </head>
-  <body>
-    <%- include('ui/nav.ejs') %>
-    <h1><%= message %></h1>
-    <form action= <%= route %> method="POST">
+
+<head>
+  <title>Form</title>
+  <link rel="stylesheet" href="/form.css">
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+  <%- include('ui/nav.ejs') %>
+    <div class="form-container">
+      <h1>
+        <%= message %>
+      </h1>
+      <form action=<%=route %> method="POST">
         <label for="name">Name:</label>
-        <input type="text" id="name" name="userName"   value='<%= user.name %>' required>
+        <input type="text" id="name" name="userName" value='<%= user.name %>' required>
         <label for="profile">Profile:</label>
-        <input type="text" id="profile" name="userProfile"  value='<%= user.profilePic %>'    required>
+        <input type="text" id="profile" name="userProfile" value='<%= user.profilePic %>' required>
         <label for="techStack">Tech Stack:</label>
-        <input type="text" id="techStack" name="userTechStack"   value='<%= user.techStack %>' required>
-       <button type="submit">Submit</button>
-    </form>
-  </body>
+        <input type="text" id="techStack" name="userTechStack" value='<%= user.techStack %>' required>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+</body>
+
 </html>
