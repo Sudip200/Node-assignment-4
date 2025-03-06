@@ -1,6 +1,6 @@
 const Sequelize = require("sequelize");
-const sequelize = new Sequelize("assignment", "root", "", {
-  dialect: "mysql",
+const sequelize = new Sequelize("assignment", "postgres", "sudip", {
+  dialect: "postgres",
   host: "localhost",
 });
 

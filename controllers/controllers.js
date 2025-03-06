@@ -8,7 +8,8 @@ exports.handleFormScreen = (req, res, next) => {
   return res.render("form", {
     message: "Create User",
     user: {
-      name: "",
+      firstname: "",
+      lastname: "",
       profilePic: "",
       techStack: "",
     },
@@ -17,7 +18,8 @@ exports.handleFormScreen = (req, res, next) => {
   });
 };
 exports.handleCreate = (req, res, next) => {
-  const name = req.body.userName;
+  const firstname = req.body.firstuserName;
+  const lastname = req.body.lastuserName;
   let profilePic = req.body.userProfile;
   const techStack = req.body.userTechStack;
   const errors = validationResult(req);
@@ -29,7 +31,8 @@ exports.handleCreate = (req, res, next) => {
     return res.render("form", {
       message: "Create User",
       user: {
-        name: name,
+        firstname: firstname,
+        lastname: lastname,
         profilePic: profilePic,
         techStack: techStack,
       },
@@ -38,7 +41,8 @@ exports.handleCreate = (req, res, next) => {
     });
   }
   User.create({
-    name: name,
+    firstname: firstname,
+    lastname: lastname,
     profilePic: profilePic,
     techStack: techStack,
   })
@@ -92,7 +96,8 @@ exports.updateUser = (req, res, next) => {
     return res.render("form", {
       message: "Edit User",
       user: {
-        name: req.body.userName,
+        firstname: req.body.firstuserName,
+        lastname: req.body.lastuserName,
         profilePic: req.body.userProfile,
         techStack: req.body.userTechStack,
       },
@@ -103,7 +108,8 @@ exports.updateUser = (req, res, next) => {
 
   User.update(
     {
-      name: req.body.userName,
+      firstname: req.body.firstuserName,
+      lastname: req.body.lastName,
       profilePic: req.body.userProfile,
       techStack: req.body.userTechStack,
     },

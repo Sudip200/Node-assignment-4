@@ -25,7 +25,7 @@ app.use((error, req, res, next) => {
   res.render("error", { error: error.message });
 });
 sequelize
-  .sync()
+  .sync({ force: true })
   .then(() => {
     console.log("Database is connected");
   })

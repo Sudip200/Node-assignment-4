@@ -4,15 +4,17 @@ const handleControllers = require("../controllers/controllers");
 const { body } = require("express-validator");
 const User = require("../models/users");
 router.get("/", handleControllers.handleHome);
-router.get("/form", handleControllers.handleFormScreen);
+router.get("/create", handleControllers.handleFormScreen);
 router.post(
   "/add",
   [
-    body("userName")
+    body("firstuserName")
       .isAlpha("en-US", { ignore: " " })
-      .withMessage("Name should be alphabetic")
-      .custom((value) => {
-        return User.findOne({ where: { name: value } })
+      .withMessage("First Name should be alphabetic")
+      .custom((value, { req }) => {
+        return User.findOne({
+          where: { firstname: value, lastname: req.body.lastuserName },
+        })
           .then((user) => {
             if (user) {
               return Promise.reject("User already exists");
@@ -23,6 +25,9 @@ router.post(
             throw new Error(err);
           });
       }),
+    body("lastuserName")
+      .isAlpha()
+      .withMessage("Last Name should be alphabetic"),
     body("userProfile").isURL().withMessage("Profile should be URL"),
   ],
   handleControllers.handleCreate
@@ -33,24 +38,13 @@ router.get("/edit/:id", handleControllers.editUser);
 router.post(
   "/edit/:id",
   [
-    body("userName")
-      .isAlpha("en-US", { ignore: " " })
-      .withMessage("Name should be alphabetic")
-      .custom((value, { req }) => {
-        return User.findOne({
-          where: { name: value, id: { $ne: parseInt(req.params.id) } },
-        })
-          .then((user) => {
-            console.log(user);
-            if (user) {
-              return Promise.reject("User already exists");
-            }
-            return true;
-          })
-          .catch((err) => {
-            throw new Error(err);
-          });
-      }),
+    body("firstuserName")
+      .isAlpha()
+      .withMessage("First Name should be alphabetic"),
+    body("lastuserName")
+      .isAlpha()
+      .withMessage("Last Name should be alphabetic"),
+
     body("userProfile").isURL().withMessage("Profile should be URL"),
   ],
   handleControllers.updateUser

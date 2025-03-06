@@ -1,33 +1,47 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Form</title>
+    <link rel="stylesheet" href="/form.css" />
+    <link rel="stylesheet" href="/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
 
-<head>
-  <title>Form</title>
-  <link rel="stylesheet" href="/form.css">
-  <link rel="stylesheet" href="/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-
-<body>
-  <%- include('ui/nav.ejs') %>
+  <body>
+    <%- include('ui/nav.ejs') %>
     <div class="form-container">
       <%- include('ui/error.ejs') %>
-        <h1>
-          <%= message %>
-        </h1>
-        <form action=<%=route %> method="POST">
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="userName" value='<%= user.name %>' <% if (route.includes('edit')) { %>
-          readonly <% } %> required>
+      <h1><%= message %></h1>
+      <form action="<%= route %>" method="POST">
+        <label for="name">First Name:</label>
+        <input type="text" id="name" name="firstuserName" value='<%=
+        user.firstname %>' <% if (route.includes('edit')) { %> readonly <% } %>
+        required>
+        <label for="name">Last Name:</label>
+        <input type="text" id="name" name="lastuserName" value='<%=
+        user.lastname %>' <% if (route.includes('edit')) { %> readonly <% } %>
+        required>
 
-            <label for="profile">Profile:</label>
-            <input type="text" id="profile" name="userProfile" value='<%= user.profilePic %>'>
-            <label for="techStack">Tech Stack:</label>
-            <input type="text" id="techStack" name="userTechStack" value='<%= user.techStack %>' required>
-            <button type="submit">Submit</button>
-        </form>
+        <label for="profile">Profile:</label>
+        <input
+          type="text"
+          id="profile"
+          name="userProfile"
+          value="<%= user.profilePic %>"
+        />
+        <label for="techStack">Tech Stack:</label>
+        <input
+          type="text"
+          id="techStack"
+          name="userTechStack"
+          value="<%= user.techStack %>"
+          required
+        />
+        <button type="submit">Submit</button>
+      </form>
     </div>
-
-</body>
-
+  </body>
 </html>
