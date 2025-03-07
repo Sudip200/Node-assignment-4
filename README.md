@@ -10,6 +10,11 @@ This is a **User Management System** built using **Node.js**, **Express.js**, an
 - **One-to-Many Relationship**: Demonstrates how a user can have multiple projects, with Sequelize managing these relationships.
 - **404 Error Handling**: A custom 404 error page is displayed when an invalid route is accessed.
 
+## Screenshots
+
+
+[Screencast from 2025-03-07 12-02-05.webm](https://github.com/user-attachments/assets/be991af3-200e-4367-9bba-98f0cbc579c7)
+
 ## Requirements
 
 To get started, ensure you have the following installed:
