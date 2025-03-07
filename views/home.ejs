@@ -1,26 +1,23 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Home</title>
+    <link rel="stylesheet" href="/home.css" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
 
-<head>
-  <title>Home</title>
-  <link rel="stylesheet" href="/home.css">
-  <link rel="stylesheet" href="/style.css">
-</head>
-
-<body>
-  <%- include('ui/nav.ejs') %>
+  <body>
+    <%- include('ui/nav.ejs') %>
     <div class="home-page">
       <div class="image-container">
         <img src="../assets/welcome2.svg" alt="welcome image" width="700px" />
       </div>
       <div class="text-container">
         <h1>Welcome to the Home Page</h1>
-        <p>Click on the links above to navigate through the website.</p>
+        <p>Server is running successfully</p>
 
         <button class="btn"><a href="/users">View Users</a></button>
       </div>
     </div>
-
-</body>
-
+  </body>
 </html>

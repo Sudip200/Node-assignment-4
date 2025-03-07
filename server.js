@@ -16,16 +16,17 @@ app.use(router);
 app.use((req, res, next) => {
   res.status(404).render("404");
 });
-
+// one to may relation user can have many projects
 User.hasMany(Project, { onDelete: "CASCADE" });
 Project.belongsTo(User, { onDelete: "CASCADE" });
 
 app.use((error, req, res, next) => {
+  // centralized error handling any internal server error will pass through this
   console.log(error);
   res.render("error", { error: error.message });
 });
 sequelize
-  .sync({ force: true })
+  .sync()
   .then(() => {
     console.log("Database is connected");
   })

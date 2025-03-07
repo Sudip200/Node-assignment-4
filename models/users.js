@@ -1,6 +1,6 @@
 const sequelize = require("../config/config");
 const Sequelize = require("sequelize");
-
+// user schema with id,firstname,lastname,profilePic,techStack,profilePic,techStack
 const User = sequelize.define("user", {
   id: {
     type: Sequelize.INTEGER,
