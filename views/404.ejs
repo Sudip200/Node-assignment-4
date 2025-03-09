@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Form</title>
+    <link rel="stylesheet" href="/style.css" />
 
-<head>
-  <title>Form</title>
-  <link rel="stylesheet" href="/style.css" />
-  <link rel="stylesheet" href="/404.css" />
-</head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<body>
-  <%- include('ui/nav.ejs') %>
+    <link rel="stylesheet" href="/404.css" />
+  </head>
+
+  <body>
+    <%- include('ui/nav.ejs') %>
     <div class="page-404">
       <div class="image-container">
         <img src="../assets/404.svg" alt="404" width="700px" />
@@ -19,6 +21,5 @@
         <button class="btn"><a href="/">Home</a></button>
       </div>
     </div>
-</body>
-
+  </body>
 </html>

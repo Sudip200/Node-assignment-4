@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title>Form</title>
     <link rel="stylesheet" href="/style.css" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link rel="stylesheet" href="/404.css" />
-</head>
+  </head>
 
-<body>
+  <body>
     <%- include('ui/nav.ejs') %>
-        <div class="page-404">
-            <div class="image-container">
-                <img src="../assets/error.svg" alt="404" width="700px" />
-            </div>
-            <div class="text-container">
-                <h1>Internal Server Error</h1>
-                <p>
-                    <%= error %>
-                </p>
-                <button class="btn"><a href="/">Home</a></button>
-            </div>
-        </div>
-</body>
-
+    <div class="page-404">
+      <div class="image-container">
+        <img src="../assets/error.svg" alt="404" width="700px" />
+      </div>
+      <div class="text-container">
+        <h1>Internal Server Error</h1>
+        <p><%= error %></p>
+        <button class="btn"><a href="/">Home</a></button>
+      </div>
+    </div>
+  </body>
 </html>
