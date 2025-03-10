@@ -165,6 +165,7 @@ exports.createProject = (req, res) => {
         error.statusCode = 404;
         return next(error);
       }
+      //magic method to create project
       return user.createProject({
         title: title,
         description: description,

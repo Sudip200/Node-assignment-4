@@ -52,15 +52,12 @@ To get started, ensure you have the following installed:
 
    Edit the `config/config.js` file to match your database connection credentials. The file should look something like:
 
-   ```js
-   module.exports = {
-     database: 'your-database-name',
-     username: 'your-username',
-     password: 'your-password',
-     host: 'localhost',
-     dialect: 'mysql',  // Change to 'postgres', 'sqlite' as needed
-   };
-   ```
+  `
+const sequelize = new Sequelize("assignment", "postgres", "sudip", {
+  dialect: "postgres",
+  host: "localhost",
+});`
+ 
 
 5. **Run the Application**
 
