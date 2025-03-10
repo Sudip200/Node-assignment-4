@@ -11,6 +11,11 @@ This is a **User Management System** built using **Node.js**, **Express.js**, an
 - **404 Error Handling**: A custom 404 error page is displayed when an invalid route is accessed.
 
 ## Screenshots
+![image](https://github.com/user-attachments/assets/02955b9c-b967-4f16-b9e0-69b8ca697748)
+
+![image](https://github.com/user-attachments/assets/90153628-a8fa-425b-89f4-f4a8dff252a4)
+
+![image](https://github.com/user-attachments/assets/85d66f1d-73b7-40a6-b917-ed4cf6fdea7f)
 
 
 [Screencast from 2025-03-07 12-02-05.webm](https://github.com/user-attachments/assets/be991af3-200e-4367-9bba-98f0cbc579c7)
